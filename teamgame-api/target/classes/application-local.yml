@@ -1,0 +1,24 @@
+server:
+  port: 8090
+
+debug: true
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:teamgame_db
+    driverClassName: org.h2.Driver
+    username: testUser # this must be stored in a vault and use an env variable here
+    password: password24 # this must be stored in a vault and use an env variable here
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update # This parameter is only used for this test. In a real env we use liquibase to update the schema
+    show-sql: true

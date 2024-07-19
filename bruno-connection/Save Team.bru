@@ -1,0 +1,41 @@
+meta {
+  name: Save Team
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8090/api/v1/teams
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "teamname1",
+    "acronym": "acronym1",
+    "budget": 1.0,
+    "playerList": [
+      {
+        "name": "player1",
+        "position": "position1"
+      },
+          {
+        "name": "player2",
+        "position": "position2"
+      },
+          {
+        "name": "player3",
+        "position": "position3"
+      },
+          {
+        "name": "player4",
+        "position": "position4"
+      },    {
+        "name": "player5",
+        "position": "position5"
+      }
+    ]
+  }
+  
+}
